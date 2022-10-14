@@ -5,7 +5,7 @@ public class DemoMainApp {
 
 
         Person susi; // Ein Objekt von Person für Susi, eine Variable vom Typ "Person"
-        susi = new Person(); // Objekt wird erst hier erstellt. Erst jetzt wir Speicher belegt. 
+        susi = new Person(); // Objekt wird erst hier erstellt. Erst jetzt wird Speicher belegt.
         susi.uniqueID = 4711;
         susi.firstName = "Susi";
         susi.lastName = "Sorglos" ;
@@ -22,6 +22,21 @@ public class DemoMainApp {
         printPerson(max);
         printPerson(susi);
         printTwoPerson(susi,max);
+
+        max.print();
+        susi.print();
+
+        System.out.println("max.fullName() = " + max.fullName()); // ändert Nachname auf den in Klammern (1)
+        susi.setLastName(max.lastName);
+        System.out.println("susi.fullName() = " + susi.fullName());
+        susi.changeAge(40);
+        System.out.println("susi.ageInYears = " + susi.ageInYears);
+        susi.changeAge(28);
+        System.out.println("susi.ageInYears = " + susi.ageInYears);
+        susi.ageInYears = 28; // andere Anwendung besser um Bedingungen zu setzen (2)
+        System.out.println("susi.ageInYears = " + susi.ageInYears);
+
+        System.out.println("max.toString() = " + max.toString()); //generierte to string ausgeben (3)
 
 
     }
